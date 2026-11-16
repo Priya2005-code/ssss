@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>//</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+        }
+
+        .page {
+            height: 100vh;
+            width: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 25px;
+            animation: fade 1s ease;
+        }
+
+        .active {
+            display: flex;
+        }
+
+        /* PAGE 1 */
+
+        #page1 {
+            background: linear-gradient(135deg, #ffe0e9, #e6d5ff);
+        }
+
+        #page1 h1 {
+            font-size: 65px;
+            color: #a64d79;
+        }
+
+        #page1 p {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #70445b;
+        }
+
+        .swipe-btn {
+            position: absolute;
+            bottom: 50px;
+            padding: 14px 35px;
+            border: none;
+            border-radius: 30px;
+            background: #a64d79;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            animation: bounce 1.5s infinite;
+        }
+
+        /* PAGE 2 */
+
+        #page2 {
+            background: linear-gradient(135deg, #fce4ec, #f3e5f5);
+            height: 100vh;
+            max-height: 100vh;
+            overflow-y: auto;
+            justify-content: flex-start;
+            padding: 40px 20px;
+        }
+
+        #page2 h1 {
+            color: #ad5278;
+            font-size: 32px;
+            margin-bottom: 25px;
+            flex-shrink: 0;
+        }
+
+        .message-box {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 650px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+
+        .message-box p {
+            font-size: 18px;
+            line-height: 1.9;
+            color: #70445b;
+            text-align: left;
+            overflow-wrap: anywhere;
+        }
+
+        #page2 .next-btn {
+            margin-top: 30px;
+            margin-bottom: 20px;
+            flex-shrink: 0;
+        }
+
+        .next-btn {
+            padding: 13px 30px;
+            background: #ad5278;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* PAGE 3 */
+
+        #page3 {
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            padding: 30px 20px;
+        }
+
+        #page3 h1 {
+            font-size: 38px;
+            color: #9e315b;
+            line-height: 1.8;
+        }
+
+        #page3 h2 {
+            font-size: 25px;
+            margin-top: 20px;
+            color: #74334e;
+        }
+
+        #page3 p {
+            margin-top: 20px;
+            font-size: 19px;
+            color: #74334e;
+        }
+
+        .heart {
+            font-size: 65px;
+            margin-bottom: 20px;
+            animation: heartbeat 1s infinite;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- BACKGROUND MUSIC -->
+
+    <audio id="bgMusic" loop>
+        <source src="music.mp4" type="audio/mpeg">
+    </audio>
+
+
+    <!-- PAGE 1 -->
+
+    <section class="page active" id="page1">
+
+        <h1>Hi 😊</h1>
+
+       
+        <button class="swipe-btn" onclick="nextPage(2)">
+            Swipe to continue ↓
+        </button>
+
+    </section>
+
+
+    <!-- PAGE 2 -->
+
+    <section class="page" id="page2">
+
+        <h1>I am not a person who express their feelings in words but i tried my best and i believe this is not that much cringe !!!</h1>
+
+        <div class="message-box">
+
+            <p>
+
+                I can't even imagine that i trust a man this much after all the choas happen in my life. After i met you , whenever i felt sad i just wants to come to you and i am sure i will be alright after i talk to you ! . These all happens just because the comfort you gave to me and i always grateful for that. 
+                I know you as a collegue , as a friend , as a brother but you look different as a father ! the moment your girl smiles at you i realised that you are a FATHER for her . Trust me she never ever hate you . whenever you feel low just go to her, tell her what happens she can understand what you say at any age.
+                Just like you said , she needss you! .she needed you in every moment of her life .
+
+                And don't forget that i also need you . I also need you as my forever wellwisher and as my BROTHER!!!.
+            </p>
+
+        </div>
+
+        <button class="next-btn" onclick="nextPage(3)">
+            Continue ❤️
+        </button>
+
+    </section>
+
+
+    <!-- PAGE 3 -->
+
+    <section class="page" id="page3">
+
+        <div class="heart"></div>
+
+        <h1>பிறந்தநாள் வாழ்த்துகள்</h1>
+
+        <h2>ABDULL 🤍</h2>
+
+    </section>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        const music = document.getElementById("bgMusic");
+
+        function nextPage(pageNumber) {
+
+            // Start music after first click
+
+            if (music.paused) {
+                music.play().catch(error => {
+                    console.log("Music could not start:", error);
+                });
+            }
+
+            // Hide all pages
+
+            document.querySelectorAll(".page").forEach(page => {
+                page.classList.remove("active");
+            });
+
+            // Show selected page
+
+            document.getElementById("page" + pageNumber)
+                .classList.add("active");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
